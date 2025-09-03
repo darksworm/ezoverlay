@@ -17,7 +17,6 @@ let package = Package(
             exclude: [
                 "Tests", 
                 "Package.swift", 
-                "build.sh", 
                 "test_with_screenshots.sh",
                 "Info.plist"
             ],

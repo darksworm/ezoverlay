@@ -8,7 +8,9 @@ final class LayoutRepository: ObservableObject {
     private let currentLayerKey = "CurrentLayerID"
     
     init() {
-        loadDefaultLayers()
+        if !loadKeymapJSONIfPresent() {
+            loadDefaultLayers()
+        }
         loadCurrentLayer()
     }
     
@@ -26,6 +28,19 @@ final class LayoutRepository: ObservableObject {
         setCurrentLayer(availableLayers[index])
     }
     
+    private func loadKeymapJSONIfPresent() -> Bool {
+        let searchPaths = ["keymap.json", "../keymap.json"]
+        let fileManager = FileManager.default
+
+        for path in searchPaths {
+            let url = URL(fileURLWithPath: path)
+            if fileManager.fileExists(atPath: url.path) {
+                return loadOryxLayout(from: url)
+            }
+        }
+        return false
+    }
+
     private func loadDefaultLayers() {
         // Default layers for v1 - these would eventually load from PNG assets or JSON
         availableLayers = [

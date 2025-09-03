@@ -7,6 +7,7 @@ A macOS application that displays an Ergodox EZ keyboard layout as a translucent
 - **Global Hotkey Toggle**: Press `Cmd+Option+Ctrl+L` to show/hide overlay
 - **Transparent Overlay**: Borderless, transparent window that appears on all Spaces
 - **Auto Layer Switching**: F13-F20 keys automatically switch overlay layers (requires Input Monitoring permission)
+- **Custom Keymap Support**: Automatically loads your `keymap.json` layout if present
 - **Click-through Support**: Configurable click-through behavior
 - **Multi-Space Support**: Overlay appears on all desktop Spaces and over full-screen apps
 - **Customizable Opacity**: Adjust overlay transparency via preferences
